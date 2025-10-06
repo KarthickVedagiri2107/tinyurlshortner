@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms'; // For ngModel, ngForm
 @Component({
   selector: 'app-root',
   standalone: true, // ✅ required
-  imports: [UrlForm,UrlList,UrlSearch], // ✅ only standalone components/modules here
+  imports: [UrlForm,UrlList], // ✅ only standalone components/modules here
   providers: [Url], // ✅ OR use @Injectable({ providedIn: 'root' })
   templateUrl: './app.component.html',
   
