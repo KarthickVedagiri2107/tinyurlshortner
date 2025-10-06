@@ -35,12 +35,14 @@ submitUrl() {
   this.urlService.postData(this.url ).subscribe({
       next: (res) => {
         console.log('Success:', res);
+        alert('Short URL created successfully!');
+        window.location.reload();
       },
       error: (err) => {
         console.error('Error:', err);
       }
     });
-  //this.urlService.createShortUrl(this.url).subscribe();
+  
 }
 
 

@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
   }
 
  
-    title = 'app works!';
+    title = 'URL Shortner!';
     //this.Iauth
  
   
