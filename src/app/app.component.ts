@@ -6,14 +6,13 @@ import { Url } from './/services/url';
 //import { RouterModule } from '@angular/router';
 import { UrlForm } from './components/url-form/url-form'; // 👈 Import the new component
 import { UrlList } from './components/url-list/url-list'; // 👈 Import the new component
-import { UrlSearch } from './components/url-search/url-search'; // 👈 Import the new component
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; // For ngModel, ngForm
 
 @Component({
   selector: 'app-root',
   standalone: true, // ✅ required
-  imports: [UrlForm,UrlList,UrlSearch], // ✅ only standalone components/modules here
+  imports: [UrlForm,UrlList], // ✅ only standalone components/modules here
   providers: [Url], // ✅ OR use @Injectable({ providedIn: 'root' })
   templateUrl: './app.component.html',
   
