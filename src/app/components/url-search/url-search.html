@@ -1,0 +1,8 @@
+<p>url-search works!</p>
+<input [(ngModel)]="searchTerm" (ngModelChange)="search()" placeholder="Search Short URL" />
+<ul>
+  <li *ngFor="let url of url">
+    {{ url.shortURL }}
+    <button (click)="deleteUrl(url.id)">Delete</button>
+  </li>
+</ul>

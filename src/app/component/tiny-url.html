@@ -1,0 +1,50 @@
+<div class="app-container">
+  <h1 class="app-title">Tiny URL</h1>
+
+  <!-- URL Shortening Section -->
+  <div class="url-shortener-section">
+    <div class="input-group">
+      <input
+        type="url"
+        placeholder="Enter URL to shorten"
+        [(ngModel)]="urlInput"
+        class="url-input"
+      />
+      <label class="checkbox-container">
+        <input type="checkbox" [(ngModel)]="isPrivate" />
+        <span class="checkmark"></span>
+        IsPrivate
+      </label>
+    </div>
+    <button class="generate-btn" (click)="generateShortUrl()">Generate</button>
+  </div>
+
+  <!-- Public URLs Section -->
+  <div class="public-urls-section">
+    <h2 class="section-title">Public URLs</h2>
+    <div class="search-container">
+      <input
+        type="text"
+        placeholder="Search URLs..."
+        [(ngModel)]="searchTerm"
+        class="search-input"
+      />
+    </div>
+    
+    <div class="url-cards">
+      <div class="url-card" *ngFor="let url of filteredUrls">
+        <div class="url-info">
+          <a [href]="url.shortUrl" target="_blank" class="short-url">{{ url.shortUrl }}</a>
+          <p class="original-url">{{ url.originalUrl }}</p>
+        </div>
+        <div class="url-actions">
+          <button class="copy-btn" (click)="copyUrl(url.shortUrl)">Copy</button>
+          <span class="click-count">{{ url.clicks }} clicks</span>
+          <button class="delete-btn" (click)="deleteUrl(url.id)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

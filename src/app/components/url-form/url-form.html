@@ -1,0 +1,24 @@
+<form (ngSubmit)="submitUrl()" #urlForm="ngForm">
+  
+   <!-- URL Shortening Section -->
+  <div class="url-shortener-section">
+    <div class="input-group">
+      <input
+        type="url"
+        name="orginalURL" 
+        [(ngModel)]="url.orginalURL"
+        placeholder="Enter URL to shorten"
+        class="url-input"
+      />
+      <label class="checkbox-container">
+        <input type="checkbox"
+        name="isPrivate" [(ngModel)]="url.isPrivate" />
+        <span class="checkmark"></span>
+        IsPrivate
+      </label>
+    </div>
+    <button class="generate-btn" type="submit">Generate</button>
+    
+  </div>
+</form>
+

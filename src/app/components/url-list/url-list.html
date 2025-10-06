@@ -1,0 +1,17 @@
+<p>url-list works!</p>
+  <div class="url-cards">
+      <div class="url-card" *ngFor="let url of url">
+        <div class="url-info">
+          <a [href]="url.orginalURL" (click)="copy(url.id)" target="_blank" class="short-url">{{ url.shortURL }}</a>
+          <p class="original-url">{{ url.orginalURL }}</p>
+        </div>
+        <div class="url-actions">
+          <button class="copy-btn" (click)="copyUrl(url.orginalURL)">Copy</button>
+          <span class="click-count">{{ url.totalClicks }} clicks</span>
+          <button class="delete-btn" (click)="deleteUrl(url.code)">Delete</button>
+        </div>
+      </div>
+    </div>
+
+
+
